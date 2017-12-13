@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+div.divForFAQ{
+    background: #EFEFF1;
+    width:45%;
+}
+ul{
+    padding: 20px;
+}
+li{
+    font-size: 20px;
+    padding: 10px;
+    list-style-type:none;
+
+}
+li span.spanAnswer{
+    display: inline-block;
+    padding: 10px 10px 0 10px;
+    color: #6E728C;
+}
+li.liQuestion a{
+    color: #0520C7;
+    text-decoration: none;
+}

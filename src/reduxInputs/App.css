@@ -1,0 +1,75 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.DivDescription{
+  background: pink;
+  margin-left: 20px;
+  width: 200px;
+  height: 100px;
+}
+
+ul li{
+  padding: 5px;
+  text-align: left;
+}
+.WhyWebest{
+  background: cornflowerblue;
+  margin-left: 20px;
+  width:70%;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+#root{
+  width:500px;
+  height:600px;
+  background: whitesmoke;
+  margin: 0 auto;
+}
+.h1Main{
+  width: 100%;
+  background: gainsboro;
+  text-align: center;
+  font-size: 18px;
+}
+.divDalee{
+  margin-left: 20px;
+  margin-top: 50px;
+  background: white;
+  text-align: center;
+  width: 20%;
+  height: 30px;
+}
+.About{
+  padding: 10px;
+  text-align: center;
+}
+.pAbout{
+  width:20%;
+  margin-left: 20px;
+}
