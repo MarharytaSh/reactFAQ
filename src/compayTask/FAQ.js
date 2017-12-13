@@ -2,36 +2,35 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import './index.css';
 
-class CreateList extends React.Component{
+class MakeQuestionAnswer extends React.Component{
     constructor(props){
-       super(props);
-       this.haddleClick = this.haddleClick.bind(this);
-       this.state = {arr:[]};
+        super(props);
+        this.handlerClick = this.handlerClick.bind(this);
+        this.state = {
+            ext:false
+        };
     }
-    haddleClick(event){
-        var GotMark = event.target.getAttribute('mark');
-        //console.log(GotMark);
+    componentWillMount(){
         this.setState(function(currentState, props) {
-            var arr = currentState.arr;
-                if(currentState.arr.indexOf(GotMark) === -1){
-                    arr.push(GotMark);
-                }else{
-                    arr.splice(currentState.arr.indexOf(GotMark), 1);
-                }
-            return {
-                'arr': arr
-            }
+            return Object.assign({}, this.props);
         });
     }
+
+    handlerClick(event){
+        var GotMark = event.target.getAttribute('mark');
+        //console.log(GotMark);
+        var savedState = this.state;
+        this.setState(function(currentState, props) {
+            savedState.ext = !currentState.ext;
+            return savedState;
+        });
+    }
+
     render(){
         return(
-            <ul>
-                {this.props.FAQ_obj.map((elem, index)=>
-                 <li key={index} className="liQuestion"><a href="#" mark={index} onClick={this.haddleClick}> {elem.question} </a>
-                    {this.state.arr.indexOf(String(index)) !== -1 ? <span className="spanAnswer">{elem.answer}</span> : ''}
-                 </li>
-                )}
-            </ul>
+            <p className="pQuestion"><a href="#" onClick={this.handlerClick} mark={this.state.index}>{this.state.FAQ_obj.question}</a>
+                {this.state.ext ? <span className="spanAnswer">{this.state.FAQ_obj.answer}</span> : ''}
+            </p>
         );
     }
 }
@@ -40,7 +39,9 @@ class FAQ extends React.Component {
     render(){
         return (
             <div className="divForFAQ">
-                <CreateList FAQ_obj={this.props.FAQ_obj}/>
+                {this.props.FAQ_obj.map((i, index)=>
+                    <MakeQuestionAnswer FAQ_obj={i} index={index} key={index}/>
+                )}
             </div>);
     }
 }

@@ -6,22 +6,19 @@ body {
 div.divForFAQ{
     background: #EFEFF1;
     width:45%;
-}
-ul{
-    padding: 20px;
-}
-li{
-    font-size: 20px;
+    margin-left: 20px;
     padding: 10px;
-    list-style-type:none;
-
 }
-li span.spanAnswer{
+
+p.pQuestion{
+    padding: 10px;
+}
+p.pQuestion span.spanAnswer{
     display: inline-block;
     padding: 10px 10px 0 10px;
     color: #6E728C;
 }
-li.liQuestion a{
+p.pQuestion a{
     color: #0520C7;
     text-decoration: none;
 }
